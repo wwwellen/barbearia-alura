@@ -160,6 +160,7 @@ td, th {
     text-align: center;
     font-size: 2em;
     margin: 0 0 1em;
+	clear: left;
 }
 
 .titulo-principal::first-letter {
@@ -224,6 +225,11 @@ p::first-line {
 
 .img-beneficios {
     width: 60%;
+	transition: 400ms;
+}
+
+.img-beneficios:hover {
+	box-shadow: 10px 10px 5px #555555;
 }
 
 .mapa {
@@ -244,4 +250,30 @@ p::first-line {
 .video {
     width: 560px;
     margin: 2em auto;
+}
+
+/* main > p - x (elemento pai) > y (filhos diretos do elemento x, o primeiro e ultimo elemento)
+
+img + p - x (elemento âncora) + y (próximo elemento irmão)
+
+img ~ p - x (elemento âncora) ~ (pega todos os próximos elementos da tag)
+
+.principal p:not(#missao) - seleciona todos os elementos com tag p na classe principal menos a tag com id missão */
+
+@media screen and (max-width: 480px) {
+	.caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+		width: auto;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		position: static;
+	}
+
+	.lista-beneficios, .imagem-beneficios {
+		width: 100%;
+	}
 }
